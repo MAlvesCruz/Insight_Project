@@ -126,7 +126,7 @@ def pre_processing(sentence):
 
 #-----------------------------------------------------------------------------------------------------------
 # This function calculates the cosine similarity between two lists of words
-def calculo_similarity(sentence):
+def calc_similarity(sentence):
     '''Calculate cosine similarity.
     
     Description.
@@ -196,7 +196,7 @@ def finding_match(sentence, min_sim=.35, max_questions=5):
     sentence = sentence.split()
 
     # Calculate the similarity between the webapp question and all the questions in the archive
-    sim_list = calculo_similarity(sentence)                     # contains the similarity values
+    sim_list = calc_similarity(sentence)                     # contains the similarity values
     sim_list = pd.DataFrame(sim_list, columns=['similarity'], index=archive_questions.index) # convert list to a dataframe 
     
     # Concatenate the archive questions datFrame with the similarities dataFrame
