@@ -34,12 +34,13 @@ pd.options.display.max_colwidth = 500
 # These models were published by a group in the computer science departement 
 # at University of Sao Paulo (https://arxiv.org/abs/1708.06025)
 # http://nilc.icmc.usp.br/embeddings
-path_model = '/home/monique/Desktop/Curso_UofT/deep_learning/SCS3546_M6 - Natural Language Processing/06 - Natural Language Processing/'
-file_model = 'skip_s300_wo2vec.txt'
+path_model = './data/'
+#file_model = 'skip_s300_wo2vec.txt'
+file_model = 'skip_s50_wo2vec.txt'
 model = KeyedVectors.load_word2vec_format(path_model + file_model)  
 
 #%%
-path_data = '/home/monique/Desktop/Curso_UofT/deep_learning/SCS3546_M6 - Natural Language Processing/06 - Natural Language Processing/'
+path_data = './data/'
 file_data = 'Concat_questions'
 archive_questions = pd.read_csv(path_data + file_data)
 
