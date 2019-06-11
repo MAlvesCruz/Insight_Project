@@ -1,11 +1,10 @@
 # Find My Expert
 ### The best fit for your needs
 
-Consulting project with a former Brazilian Q&A website.
 
 ## Problem
 
-Nowadays one can find many w&A websites in order to get the information needed. However, many of these services are provided mostly (or only) in English. For instance, support for Portuguese only became available last year for **quora**, even though it is the seventh most spoken language in the world. 
+Nowadays one can find many Q&A websites in order to get the information needed. However, many of these services are provided mostly (or only) in English. For instance, support for Portuguese only became available last year for **quora**, even though it is the seventh most spoken language in the world. 
 
 ![title](./images/linguas_esta.jpg)
 
@@ -73,3 +72,5 @@ Contains python codes for all the analysis (from pre-processing to file top 5)
 - data/
 
 Contains the .csv file with the questions. This files was generated based on all the tables given by the consulting company and only shows the questions that were answered. Private information concerning the users are not included.
+
+Consulting project with a former Brazilian Q&A website.
