@@ -37,7 +37,7 @@ All the tools available for NLP work, in general, pretty well for English texts.
 
 Also, the lists of stopwords are incomplete because a common verb can appear in so many forms that their individual counts are not going to be too large. Besides, I was amazed to find that common articles and pronouns were not included in the widely used lists (NLTK and SpaCy).
 
-The solution I found initially is to combine both NLTK and SpaCy listas with some additional words that I found during exploratory analysis. 
+The solution I applied was to combine both NLTK and SpaCy listas with some additional words that I found during exploratory analysis. 
 
 ### Methodology
 
@@ -45,10 +45,10 @@ The Figure below shows the pipeline of the project. It includes all the usual pr
 
 ![title](./images/metodologia.png)
 
-The sentences were vectorized after cleaning using a word2vec pre-trained model for Brazilian Portuguese publish by
+The sentences were vectorized after cleaning using a word2vec pre-trained model for Brazilian Portuguese published by
 http://nilc.icmc.usp.br/embeddings.
 
-The skipgram model with 50 dimensions was chosen for this project. The reason for that was based on the size of or sample. Because the smaller number of dimensions helps the code to find broader themes. The table below illustrates this behavior. We can see that smaller number of dimensions captures more similarity between dogs and cat, for instance. While a large number captures more information on what make these two animals different.  
+The skipgram model with 50 dimensions was chosen for this project. The reason for that was based on the size of our dataset, because a smaller number of dimensions helps the code to find broader themes, in this case. The table below illustrates this behavior. We can see that a smaller number of dimensions captures more similarity between dog and cat, for instance, while a large number captures more information on what make these two animals different.  
 
 | Word1  | Word2  | Similarity | # of Dimensions|
 |--------|--------|------------|----------------|
@@ -66,11 +66,11 @@ Because we do not have any labels, the validation was performed manually by:
 
 1) Selecting real questions from **quora** in Portuguese for a variety of topics (e.g. Food, Sports, Tourism...);
 2) Ingesting these questions into the code;
-3) Looking at the top 5 most similar questions in the database and manually evaluating whether they belong the same topic.
+3) Looking at the top 5 most similar questions in the database and manually evaluating whether they belong to the same topic as the input question.
 
-Looking at the most similar question, I found that 70% of them matched the topic of the input question. This is a great result given the fact that was no limitation about the topic and they varied from relationship to science. 
+Looking at the most similar question (that with the largest cosine similarity value), I found that in 70% of the time, they matched the topic of the input question. This is a great result given the fact that there was no limitation about the question's topic (they varied from relationship to science). 
 
-Another important aspect for the validation is to check whether more people could reply to the input question, since sending all questions of a particular topic to the same user is not a desirable action. For this reason, I checked how many of the top 5 questions belonged to the same topic as the input question.  Similarly to the case above, in 70% of the cases, three or more questions in the top 5 belonged to the same topic as the input question. 
+Another important aspect for the validation is to check whether more people could reply to the input question, since sending all questions of a particular topic to the same user(s) is not a desirable action. For this reason, I checked how many of the top 5 questions belonged to the same topic as the input question.  Similarly to the case above, in 70% of the cases, three or more questions in the top 5 belonged to the same topic as the input question. 
 
 ## What is included in this repository
 
